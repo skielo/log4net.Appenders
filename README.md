@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/stemarie/log4net.Azure.png?label=ready&title=Ready)](https://waffle.io/stemarie/log4net.Azure)
+[![Stories in Ready](https://badge.waffle.io/skielo/log4net.Azure.png?label=ready&title=Ready)](https://waffle.io/skielo/log4net.Azure)
 #log4net.Azure
 
 Transfer all your logs to the [Azure Table or Blob Storage](http://azure.microsoft.com/de-de/services/storage/) via Appender for [log4Net](https://logging.apache.org/log4net/)
@@ -7,6 +7,10 @@ Transfer all your logs to the [Azure Table or Blob Storage](http://azure.microso
 Add To project via NuGet:  
 1. Right click on a project and click 'Manage NuGet Packages'.  
 2. Search for 'log4net.Appender.Azure' and click 'Install'.  
+
+## Disclaimer
+
+This is an adaptation of this original component (https://github.com/stemarie/log4net.Azure)
 
 ## Configuration
 ### Table Storage 
@@ -81,6 +85,11 @@ Every log Entry is stored as separate XML file.
 * <b>ConnectionStringName:</b>  
   Name of a connection string specified under connectionString
   
-## View Logs
+## Author
 
-You can take a look on this [Site](http://storagetools.azurewebsites.net/) to use one of this tools based on your selected appender.
+**Ezequiel Reyno** (http://github.com/skielo)
+
+## Credits
+
+**Will Palahnuk** (https://github.com/stemarie) Creator of the component, unfortunately the original project is not longer supported.
+
