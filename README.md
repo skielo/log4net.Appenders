@@ -90,5 +90,5 @@ Every log Entry is stored as separate XML file.
 
 ## Credits
 
-**Will Palahnuk** (https://github.com/stemarie) Creator of the component, unfortunately the original project is not longer supported.
+**Karell Ste-Marie** (https://github.com/stemarie) Creator of the component, unfortunately the original project is not longer supported.
 
