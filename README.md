@@ -1,5 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/skielo/log4net.Azure.png?label=ready&title=Ready)](https://waffle.io/skielo/log4net.Azure)
-#log4net.Azure
+[![Stories](https://badge.waffle.io/skielo/log4net.Azure.svg?columns=In%20Progress,Done&style=flat)](https://waffle.io/skielo/log4net.Azure) #log4net.Azure
 
 Transfer all your logs to the [Azure Table or Blob Storage](http://azure.microsoft.com/de-de/services/storage/) via Appender for [log4Net](https://logging.apache.org/log4net/)
 
