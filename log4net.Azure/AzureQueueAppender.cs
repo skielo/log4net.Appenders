@@ -45,7 +45,7 @@ namespace log4net.Appender
                 {
                     return Util.GetConnectionString(ConnectionStringName);
                 }
-                if (String.IsNullOrEmpty(_connectionString))
+                if (string.IsNullOrEmpty(_connectionString))
                     throw new ApplicationException(Resources.AzureConnectionStringNotSpecified);
                 return _connectionString;
             }
@@ -60,7 +60,7 @@ namespace log4net.Appender
         {
             get
             {
-                if (String.IsNullOrEmpty(_queueName))
+                if (string.IsNullOrEmpty(_queueName))
                     throw new ApplicationException(Resources.QueueNameNotSpecified);
                 return _queueName;
             }

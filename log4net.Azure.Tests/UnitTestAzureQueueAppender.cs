@@ -2,12 +2,7 @@
 using log4net.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace log4net.Azure.Tests
 {
@@ -94,7 +89,7 @@ namespace log4net.Azure.Tests
                     LoggerName = "testLoggerName",
                     Message = "testMessage",
                     ThreadName = "testThreadName",
-                    TimeStamp = DateTime.UtcNow,
+                    TimeStampUtc = DateTime.UtcNow,
                     UserName = "testUsername",
                     LocationInfo = new LocationInfo("className", "methodName", "fileName", "lineNumber")
                 }
