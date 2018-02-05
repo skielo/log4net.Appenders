@@ -83,7 +83,11 @@ Every log Entry is stored as separate XML file.
   the full Azure Storage connection string
 * <b>ConnectionStringName:</b>  
   Name of a connection string specified under connectionString
-  
+
+## Run Tests
+
+For now to run the Unit Test you must have installed and running the **Azure Storage Emulator** (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator)
+
 ## Author
 
 **Ezequiel Reyno** (http://github.com/skielo)
