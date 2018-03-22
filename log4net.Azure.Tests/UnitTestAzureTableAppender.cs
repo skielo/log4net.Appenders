@@ -1,16 +1,16 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using log4net.Appender;
 using log4net.Core;
+using NUnit.Framework;
 
 namespace log4net.Azure.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTestAzureTableAppender
     {
         private AzureTableAppender _appender;
 
-        [TestInitialize]
+        [OneTimeSetUp]
         public void Initialize()
         {
             _appender = new AzureTableAppender()
@@ -21,7 +21,7 @@ namespace log4net.Azure.Tests
             _appender.ActivateOptions();
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Table_Appender()
         {
             var @event = MakeEvent();
@@ -29,7 +29,7 @@ namespace log4net.Azure.Tests
             _appender.DoAppend(@event);
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Message_With_Exception()
         {
             const string message = "Exception to follow on other line";
@@ -40,19 +40,19 @@ namespace log4net.Azure.Tests
             _appender.DoAppend(@event);
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Table_Appender_Multiple_5()
         {
             _appender.DoAppend(MakeEvents(5));
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Table_Appender_Multiple_10()
         {
             _appender.DoAppend(MakeEvents(10));
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Table_Appender_Multiple_100()
         {
             _appender.DoAppend(MakeEvents(100));

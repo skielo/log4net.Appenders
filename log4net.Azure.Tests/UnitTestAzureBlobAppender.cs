@@ -1,16 +1,16 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using log4net.Appender;
 using log4net.Core;
+using NUnit.Framework;
 
 namespace log4net.Azure.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTestAzureBlobAppender
     {
         private AzureBlobAppender _appender;
 
-        [TestInitialize]
+        [OneTimeSetUp]
         public void Initialize()
         {
             _appender = new AzureBlobAppender()
@@ -22,7 +22,7 @@ namespace log4net.Azure.Tests
             _appender.ActivateOptions();
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Blob_Appender()
         {
             var @event = MakeEvent();
@@ -30,19 +30,19 @@ namespace log4net.Azure.Tests
             _appender.DoAppend(@event);
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Blob_Appender_Multiple_5()
         {
             _appender.DoAppend(MakeEvents(5));
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Blob_Appender_Multiple_10()
         {
             _appender.DoAppend(MakeEvents(10));
         }
 
-        [TestMethod]
+        [Test]
         public void Test_Blob_Appender_Multiple_100()
         {
             _appender.DoAppend(MakeEvents(100));
