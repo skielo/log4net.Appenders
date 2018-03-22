@@ -1,0 +1,2 @@
+language: csharp
+solution: log4net.Azure.sln
