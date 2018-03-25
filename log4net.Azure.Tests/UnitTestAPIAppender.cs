@@ -1,4 +1,4 @@
-﻿using log4net.Appender;
+﻿using log4net.Appender.API;
 using log4net.Core;
 using NUnit.Framework;
 using System;
@@ -7,17 +7,21 @@ using System.Diagnostics;
 namespace log4net.Tests
 {
     [TestFixture]
-    public class UnitTestAzureQueueAppender
+    public class UnitTestAPIAppender
     {
-        private AzureQueueAppender _appender;
+        private APIAppender _appender;
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            _appender = new AzureQueueAppender()
+            _appender = new APIAppender()
             {
-                ConnectionString = "UseDevelopmentStorage=true",
-                QueueName = "testloggingqueue"
+                BaseUrl = "https://jsonplaceholder.typicode.com",
+                //BasicPass = "somePass",
+                //BasicUser = "someUser",
+                BufferSize = 2,
+                RequestUrl = "/posts"
+
             };
             _appender.ActivateOptions();
         }

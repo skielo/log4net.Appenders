@@ -61,6 +61,15 @@ namespace log4net.Appender.API.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Request URL not specified.
+        /// </summary>
+        internal static string RequestURLNotSpecified {
+            get {
+                return ResourceManager.GetString("RequestURLNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to API URL not specified.
         /// </summary>
         internal static string UrlAPINotSpecified {
