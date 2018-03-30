@@ -3,7 +3,7 @@ using log4net.Appender;
 using log4net.Core;
 using NUnit.Framework;
 
-namespace log4net.Azure.Tests
+namespace log4net.Tests
 {
     [TestFixture]
     public class UnitTestAzureTableAppender
