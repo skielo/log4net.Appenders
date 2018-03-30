@@ -1,2 +1,2 @@
 language: csharp
-solution: log4net.Azure.sln
+solution: log4net.Appenders.sln
