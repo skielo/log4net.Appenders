@@ -5,7 +5,7 @@ namespace log4net.Azure.console
 {
     class Program
     {
-        private static readonly ILog Log = LogManager.GetLogger("APIAppender1");
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Program));
 
         static void Main(string[] args)
         {
