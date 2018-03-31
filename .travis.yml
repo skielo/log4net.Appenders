@@ -1,8 +1,10 @@
 language: csharp
 solution: log4net.Appenders.sln
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY
-  on:
-    branch: master
+install:
+  - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  - mono nuget.exe restore log4net.Appenders.sln
+script:
+  - xbuild /p:Configuration=Release log4net.Appenders.sln
+  - mono nuget.exe pack ./log4net.Appenders.nuspec
+  - mono nuget.exe setApiKey $NUGET_API_KEY -Verbosity quiet
+  - mono nuget.exe push ./log4net.Appenders.*.nupkg
