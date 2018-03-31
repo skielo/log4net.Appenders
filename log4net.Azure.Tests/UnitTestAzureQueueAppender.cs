@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System;
 using System.Diagnostics;
 
-namespace log4net.Azure.Tests
+namespace log4net.Tests
 {
     [TestFixture]
     public class UnitTestAzureQueueAppender

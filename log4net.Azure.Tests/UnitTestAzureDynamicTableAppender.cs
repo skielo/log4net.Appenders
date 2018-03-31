@@ -4,7 +4,7 @@ using log4net.Core;
 using log4net.Util;
 using NUnit.Framework;
 
-namespace log4net.Azure.Tests
+namespace log4net.Tests
 {
     [TestFixture]
     public class UnitTestAzureDynamicTableAppender
