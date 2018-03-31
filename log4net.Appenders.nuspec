@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>log4net.Appenders</id>
-    <version>$version$</version>
+    <version>1.0.1</version>
     <authors>Ezequiel Reyno</authors>
     <owners>Ezequiel Reyno</owners>
     <licenseUrl>https://github.com/skielo/log4net.Appenders/blob/master/LICENSE.md</licenseUrl>
@@ -14,10 +14,10 @@
     <copyright>Copyright 2018</copyright>
     <tags>log4net azure Microsoft API REST Failover appenders</tags>
     <dependencies>
-      <dependency id="log4net" version="[$version$]" />
-      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="[$version$]" />
-      <dependency id="WindowsAzure.Storage" version="[$version$]" />
-      <dependency id="Newtonsoft.Json" version="[$version$]" /> 
+      <dependency id="log4net" version="2.0.8" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.3" />
+      <dependency id="WindowsAzure.Storage" version="9.1.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.1" /> 
     </dependencies>
   </metadata>
   <files>

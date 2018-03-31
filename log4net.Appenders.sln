@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.travis.yml = .travis.yml
 		deploy.sh = deploy.sh
 		LICENSE.md = LICENSE.md
-		Package.nuspec = Package.nuspec
+		log4net.Appenders.nuspec = log4net.Appenders.nuspec
 		README.md = README.md
 	EndProjectSection
 EndProject
