@@ -21,9 +21,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src=".\bin\log4net.Appender.API\Release\log4net.Appender.API.dll" target="lib/Release" />
-    <file src=".\bin\log4net.Appender.API\Release\log4net.Appender.API.xml" target="lib/Release" />
-    <file src=".\bin\log4net.Appender.Azure\Release\log4net.Appender.Azure.dll" target="lib/Release" />
-    <file src=".\bin\log4net.Appender.Azure\Release\log4net.Appender.Azure.xml" target="lib/Release" />
+    <file src="./bin/log4net.Appender.API/Release/log4net.Appender.API.dll" target="lib/Release" />
+    <file src="./bin/log4net.Appender.API/Release/log4net.Appender.API.xml" target="lib/Release" />
+    <file src="./bin/log4net.Appender.Azure/Release/log4net.Appender.Azure.dll" target="lib/Release" />
+    <file src="./bin/log4net.Appender.Azure/Release/log4net.Appender.Azure.xml" target="lib/Release" />
   </files>
 </package>
