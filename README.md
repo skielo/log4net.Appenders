@@ -5,7 +5,7 @@ Transfer all your logs to the [Azure Table or Blob Storage](http://azure.microso
 ## Install
 Add To project via NuGet:  
 1. Right click on a project and click 'Manage NuGet Packages'.  
-2. Search for 'log4net.Appender.Azure' and click 'Install'.  
+2. Search for 'log4net.Appenders' and click 'Install'.  
 
 ## Disclaimer
 
@@ -83,6 +83,63 @@ Every log Entry is stored as separate XML file.
   the full Azure Storage connection string
 * <b>ConnectionStringName:</b>  
   Name of a connection string specified under connectionString
+
+### APIAppender
+Every log Entry is pushed to an endpoint API.
+
+    <appender name="APIAppender1" type="log4net.Appender.API.APIAppender, log4net.Appender.API">
+	  <!-- endpoint url -->
+      <param name="RequestUrl" value="/posts"/>
+	  <!-- base url -->
+      <param name="BaseUrl" value="https://jsonplaceholder.typicode.com"/>
+      <param name="BufferSize" value="1" />
+    </appender>
+
+* <b>RequestUrl:</b>  
+  Request segment of the API endpoint
+* <b>BaseUrl:</b>  
+  Base url of the endpoint
+* <b>BasicUser:</b>  
+  User to include the basic authentincation header
+* <b>BasicPass:</b>  
+  Pass to include the basic authentincation header
+
+### FailoverAppender
+This appender has configured two appenders, the primary where is going to push the logs and a failover appender
+in case something goes wrong.
+
+    <appender name="FailoverAppender" type="log4net.Appender.API.FailoverAppender, log4net.Appender.API">
+        <layout type="log4net.Layout.PatternLayout">
+            <conversionPattern value="%date [%thread] %-5level %logger - %message%newline"/>
+        </layout>
+ 
+        <!--This is a custom test appender that will always throw an exception -->
+        <!--The first and the default appender that will be used.-->
+        <PrimaryAppender type="log4net.Azure.console.ExceptionThrowerAppender" >
+            <ThrowExceptionForCount value="1" />
+            <layout type="log4net.Layout.PatternLayout">
+                <conversionPattern value="%date [%thread] %-5level %logger - %message%newline"/>
+            </layout>        
+        </PrimaryAppender>
+ 
+        <!--This appender will be used only if the PrimaryAppender has failed-->
+        <FailOverAppender type="log4net.Appender.RollingFileAppender">
+            <file value="log.txt"/>
+            <rollingStyle value="Size"/>
+            <maxSizeRollBackups value="10"/>
+            <maximumFileSize value="100mb"/>
+            <appendToFile value="true"/>
+            <staticLogFileName value="true"/>
+            <layout type="log4net.Layout.PatternLayout">
+                <conversionPattern value="%date [%thread] %-5level %logger - %message%newline"/>
+            </layout>
+        </FailOverAppender>
+    </appender>
+
+* <b>PrimaryAppender:</b>  
+  Primary appender to push logs
+* <b>FailOverAppender:</b>  
+  Secondary appender in case something goes wrong.
 
 ## Run Tests
 
