@@ -5,8 +5,15 @@ using System.Text;
 
 namespace log4net.Appender.API
 {
+    /// <summary>
+    /// This entity is used to push to an API endpoint
+    /// </summary>
     public class APILoggingEventEntity
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="e"></param>
         public APILoggingEventEntity(LoggingEvent e)
         {
             Domain = e.Domain;
@@ -35,35 +42,65 @@ namespace log4net.Appender.API
                 Exception = e.ExceptionObject.ToString();
             }
         }
-
+        /// <summary>
+        /// User name
+        /// </summary>
         public string UserName { get; set; }
-
+        /// <summary>
+        /// Timestamp of the event
+        /// </summary>
         public DateTime EventTimeStamp { get; set; }
-
+        /// <summary>
+        /// Thread name
+        /// </summary>
         public string ThreadName { get; set; }
-
+        /// <summary>
+        /// Message of the event
+        /// </summary>
         public string Message { get; set; }
-
+        /// <summary>
+        /// Properties of the event
+        /// </summary>
         public string Properties { get; set; }
-
+        /// <summary>
+        /// Event level
+        /// </summary>
         public string Level { get; set; }
-
+        /// <summary>
+        /// Identity of the event
+        /// </summary>
         public string Identity { get; set; }
-
+        /// <summary>
+        /// Domain of the event
+        /// </summary>
         public string Domain { get; set; }
-
+        /// <summary>
+        /// Location
+        /// </summary>
         public string Location { get; set; }
-
+        /// <summary>
+        /// Exception message
+        /// </summary>
         public string Exception { get; set; }
-
+        /// <summary>
+        /// Class name of the call
+        /// </summary>
         public string ClassName { get; set; }
-
+        /// <summary>
+        /// File name of the call
+        /// </summary>
         public string FileName { get; set; }
-
+        /// <summary>
+        /// Line number
+        /// </summary>
         public string LineNumber { get; set; }
-
+        /// <summary>
+        /// Method name which executes the log
+        /// </summary>
         public string MethodName { get; set; }
-
+        /// <summary>
+        /// Stack frames
+        /// </summary>
         public StackFrameItem[] StackFrames { get; set; }
     }
 }

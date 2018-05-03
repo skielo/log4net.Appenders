@@ -15,13 +15,22 @@ using System.Collections.Generic;
 
 namespace log4net.Appender.API
 {
+    /// <summary>
+    /// This appender pushs your logs to a specific endpoint
+    /// </summary>
     public class APIAppender : BufferingAppenderSkeleton
     {
         private string _baseUrl;
         private string _requestUrl;
         private string _basicUser;
         private string _basicPass;
+        /// <summary>
+        /// URL Key
+        /// </summary>
         public string UrlKey { get; set; }
+        /// <summary>
+        /// Request URL to push your logs
+        /// </summary>
         public string RequestUrl
         {
             get
@@ -33,6 +42,9 @@ namespace log4net.Appender.API
                 _requestUrl = value;
             }
         }
+        /// <summary>
+        /// Base URL for your endpoint
+        /// </summary>
         public string BaseUrl
         {
             get
@@ -50,16 +62,24 @@ namespace log4net.Appender.API
                 _baseUrl = value;
             }
         }
+        /// <summary>
+        /// User for basic authentication
+        /// </summary>
         public string BasicUser {
             get { return _basicUser; }
             set { _basicUser = value; }
         }
+        /// <summary>
+        /// Password for basic authentication
+        /// </summary>
         public string BasicPass
         {
             get { return _basicPass; }
             set { _basicPass = value; }
         }
-
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public APIAppender()
         {
             PatternLayout layout = new PatternLayout();
@@ -69,9 +89,9 @@ namespace log4net.Appender.API
         }
 
         /// <summary>
-        /// 
+        /// This method pushs logs events to the specified endopoint
         /// </summary>
-        /// <param name="events"></param>
+        /// <param name="events">Events to been pushed</param>
         protected override void SendBuffer(LoggingEvent[] events)
         {
             var clientHttp = new HttpClient();
@@ -91,9 +111,9 @@ namespace log4net.Appender.API
         }
 
         /// <summary>
-        /// 
+        /// Constructs the Authentication header
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String representation of the basic authentication header</returns>
         private string GetAuthenticationHeader()
         {
             var plainTextBytes = Encoding.UTF8.GetBytes(string.Format("{0}:{1}", BasicUser, BasicPass));

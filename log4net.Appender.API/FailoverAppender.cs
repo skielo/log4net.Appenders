@@ -16,8 +16,9 @@ namespace log4net.Appender.API
     {
         private AppenderSkeleton _primaryAppender;
         private AppenderSkeleton _failOverAppender;
+        
         /// <summary>
-        /// Configured primary appender
+        /// Primary appender to push logs
         /// </summary>
         public AppenderSkeleton PrimaryAppender
         {
@@ -29,7 +30,7 @@ namespace log4net.Appender.API
             }
         }
         /// <summary>
-        /// Configured failover appender
+        /// Failover appender in case the primary fails
         /// </summary>
         public AppenderSkeleton FailOverAppender
         {
@@ -41,15 +42,15 @@ namespace log4net.Appender.API
             }
         }
         /// <summary>
-        /// Defines the default error handler
+        /// Default error handler
         /// </summary>
         public IErrorHandler DefaultErrorHandler { get; set; }
         /// <summary>
-        /// Determine whether or not log to the failover appender
+        /// Determine wheter or not the failover appender is enable
         /// </summary>
         public bool LogToFailOverAppender { get; private set; }
         /// <summary>
-        /// Appender configured to be used as failover
+        /// Default constructor
         /// </summary>
         public FailoverAppender()
         {
@@ -57,9 +58,9 @@ namespace log4net.Appender.API
             ErrorHandler = new FailOverErrorHandler(this);
         }
         /// <summary>
-        /// Append the event log to the configured appender.
+        /// Push logs entities to the primary appender.
         /// </summary>
-        /// <param name="loggingEvent">Event to log</param>
+        /// <param name="loggingEvent"></param>
         protected override void Append(LoggingEvent loggingEvent)
         {
             if (LogToFailOverAppender)
