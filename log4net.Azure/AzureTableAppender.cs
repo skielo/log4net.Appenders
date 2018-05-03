@@ -97,8 +97,16 @@ namespace log4net.Appender
                 }
             }
         }
-
-        private ITableEntity GetLogEntity(LoggingEvent @event)
+        /// <summary>
+        /// 
+        /// </summary>
+        protected CloudTable Table { get { return _table; } }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="event"></param>
+        /// <returns></returns>
+        protected ITableEntity GetLogEntity(LoggingEvent @event)
         {
             if (Layout != null)
             {
