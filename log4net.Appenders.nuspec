@@ -2,28 +2,28 @@
 <package >
   <metadata>
     <id>log4net.Appenders</id>
-    <version>$version$</version>
+    <version>1.0.2</version>
     <authors>Ezequiel Reyno</authors>
     <owners>Ezequiel Reyno</owners>
     <licenseUrl>https://github.com/skielo/log4net.Appenders/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/skielo/log4net.Appenders</projectUrl>
     <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Transfer all your logs to the Azure Table or Blob Storage via Appender for log4Net</description>
+    <description>Transfer all your logs to the Azure Table or Blob Storage via Appender for log4net</description>
     <releaseNotes>Add a new appender to push your logs to an API endpoint.</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>log4net azure Microsoft API REST Failover appenders</tags>
     <dependencies>
-      <dependency id="log4net" version="[$version$]" />
-      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="[$version$]" />
-      <dependency id="WindowsAzure.Storage" version="[$version$]" />
-      <dependency id="Newtonsoft.Json" version="[$version$]" /> 
+      <dependency id="log4net" version="2.0.8" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.3" />
+      <dependency id="WindowsAzure.Storage" version="9.1.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.1" /> 
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\log4net.Appender.API.dll" target="lib/Release" />
-    <file src="bin\Release\log4net.Appender.API.xml" target="lib/Release" />
-    <file src="bin\Release\log4net.Appender.Azure.dll" target="lib/Release" />
-    <file src="bin\Release\log4net.Appender.Azure.xml" target="lib/Release" />
+    <file src="./log4net.Appender.API/bin/Release/log4net.Appender.API.dll" target="lib/Release" />
+    <file src="./log4net.Appender.API/bin/Release/log4net.Appender.API.xml" target="lib/Release" />
+    <file src="./log4net.Azure/bin/Release/log4net.Appender.Azure.dll" target="lib/Release" />
+    <file src="./log4net.Azure/bin/Release/log4net.Appender.Azure.xml" target="lib/Release" />
   </files>
 </package>

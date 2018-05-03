@@ -96,6 +96,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestAsyncAzureTableAppender.cs" />
     <Compile Include="UnitTestAzureAppendBlobAppender.cs" />
     <Compile Include="UnitTestAzureBlobAppender.cs" />
     <Compile Include="UnitTestAzureDynamicTableAppender.cs" />
