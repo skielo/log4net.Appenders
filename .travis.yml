@@ -8,9 +8,9 @@ branches:
 before_install:
   - |
       if [ "$TRAVIS_BRANCH" = "develop" ]; then
-        eval export SUFIX="-alpha${$TRAVIS_BUILD_NUMBER}"
+        eval export SUFIX="-alpha$TRAVIS_BUILD_NUMBER"
       elif [ "$TRAVIS_BRANCH" = "release" ]; then
-        eval export SUFIX="-beta${$TRAVIS_BUILD_NUMBER}"
+        eval export SUFIX="-beta$TRAVIS_BUILD_NUMBER"
       else
         eval export SUFIX=""
       fi
