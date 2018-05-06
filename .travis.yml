@@ -1,10 +1,21 @@
 language: csharp
 solution: log4net.Appenders.sln
+env:
+    - VERSION_SUFIX="-alpha"
+before_install:
+  - |
+      if [ "$TRAVIS_BRANCH" = "develop" ]; then
+        VERSION_SUFIX="-alpha${$TRAVIS_BUILD_NUMBER}"
+      elif [ "$TRAVIS_BRANCH" = "release" ]; then
+        VERSION_SUFIX="-beta${$TRAVIS_BUILD_NUMBER}"
+      elif [ "$TRAVIS_BRANCH" = "master" ]; then
+        VERSION_SUFIX=""
+      fi
 install:
   - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
   - mono nuget.exe restore log4net.Appenders.sln
 script:
   - xbuild /p:Configuration=Release log4net.Appenders.sln
-  - mono ./.nuget/NuGet.exe pack ./log4net.Appenders.nuspec
+  - mono ./.nuget/NuGet.exe pack ./log4net.Appenders.nuspec -Version "1.0.3.$TRAVIS_JOB_ID$VERSION_SUFIX"
   - mono ./.nuget/NuGet.exe setApiKey $NUGET_API_KEY -Source $NUGET_SOURCE -Verbosity quiet
   - mono ./.nuget/NuGet.exe push ./log4net.Appenders.*.nupkg -Source $NUGET_SOURCE
