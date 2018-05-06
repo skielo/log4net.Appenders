@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>log4net.Appenders</id>
-    <version>1.0.3-alpha</version>
+    <version>1.0.3-alpha1</version>
     <authors>Ezequiel Reyno</authors>
     <owners>Ezequiel Reyno</owners>
     <licenseUrl>https://github.com/skielo/log4net.Appenders/blob/master/LICENSE.md</licenseUrl>

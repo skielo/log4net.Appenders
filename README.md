@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/skielo/log4net.Appenders.svg?branch=master) [![NuGet version](https://badge.fury.io/nu/log4net.Appenders.svg)](https://www.nuget.org/packages/log4net.Appenders/)  [![Stories](https://badge.waffle.io/skielo/log4net.Appenders.svg?columns=To%20Do,In%20Progress&style=flat)](https://waffle.io/skielo/log4net.Azure) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/skielo/log4net.Appenders/blob/master/LICENSE.md) #log4net.Appenders
+![Build Status](https://travis-ci.org/skielo/log4net.Appenders.svg?branch=master) [![NuGet version](https://badge.fury.io/nu/log4net.Appenders.svg)](https://www.nuget.org/packages/log4net.Appenders/) [![NuGet](https://img.shields.io/nuget/dt/log4net.Appenders.svg)](https://www.nuget.org/packages/log4net.Appenders/)  [![Stories](https://badge.waffle.io/skielo/log4net.Appenders.svg?columns=To%20Do,In%20Progress&style=flat)](https://waffle.io/skielo/log4net.Azure) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/skielo/log4net.Appenders/blob/master/LICENSE.md) #log4net.Appenders
 
 Transfer all your logs to the [Azure Table or Blob Storage](http://azure.microsoft.com/de-de/services/storage/) via Appender for [log4Net](https://logging.apache.org/log4net/)
 
@@ -22,7 +22,6 @@ Every log entry is stored in a separate row.
 	   <!--<param name="ConnectionStringName" value="GlobalConfigurationString" />-->
 	   <!-- You can specify this to make each LogProperty as separate Column in TableStorage, 
 		Default: all Custom Properties were logged into one single field -->
-	   <param name="PropAsColumn" value="true" />
 	   <!-- You can specify this to make each LogProperty as separate Column in TableStorage, 
 		Default: all Custom Properties were logged into one single field -->
 	   <param name="PropAsColumn" value="true" />
