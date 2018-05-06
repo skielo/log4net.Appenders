@@ -1,7 +1,10 @@
 language: csharp
 solution: log4net.Appenders.sln
-env:
-    - VERSION_SUFIX="-alpha"
+branches:
+  only:
+      - master
+      - release
+      - develop
 before_install:
   - |
       if [ "$TRAVIS_BRANCH" = "develop" ]; then
