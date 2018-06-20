@@ -24,10 +24,25 @@ namespace log4net.Appender.API
         private string _requestUrl;
         private string _basicUser;
         private string _basicPass;
+        private bool _singleProcess;
         /// <summary>
         /// URL Key
         /// </summary>
         public string UrlKey { get; set; }
+        /// <summary>
+        /// Determine wether or send the list of events to the API or process one by one.
+        /// </summary>
+        public bool SingleProcess
+        {
+            get
+            {
+                return _singleProcess;
+            }
+            set
+            {
+                _singleProcess = value;
+            }
+        }
         /// <summary>
         /// Request URL to push your logs
         /// </summary>
@@ -100,7 +115,7 @@ namespace log4net.Appender.API
                 var header = GetAuthenticationHeader();
                 clientHttp.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", header);
             }
-            if(this.BufferSize == 1)
+            if(this.SingleProcess)
             {
                 Parallel.ForEach(events, log => ProcessEvent(log, clientHttp));
             }
@@ -169,7 +184,7 @@ namespace log4net.Appender.API
                     response.StatusCode == HttpStatusCode.Created ||
                     response.StatusCode == HttpStatusCode.NoContent)
                 {
-                    LogLog.Debug(typeof(APIAppender), $"Event log has been processed");
+                    LogLog.Debug(typeof(APIAppender), $"Event log has been processed. Status code> {response.StatusCode}");
                 }
                 else
                 {

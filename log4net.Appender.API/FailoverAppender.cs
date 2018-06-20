@@ -3,16 +3,20 @@
 namespace log4net.Appender.API
 {
     /// <summary>
-    /// This appender supports failover mechanisim. In case the primary appender fails uses a secondary
-    /// appender to log.
+    /// This Failover appender has been created by: Moaid Hathot
     /// 
-    /// This solution is an implementation of https://blog.oz-code.com/disaster-strikes-complete-guide-failover-appenders-log4net/
+    /// You can find the original post here:
+    /// https://blog.oz-code.com/disaster-strikes-complete-guide-failover-appenders-log4net/
+    /// 
+    /// The original source code for this post is in this repo: https://github.com/MoaidHathot/FailOverAppender
+    /// 
+    /// Nevertheless I've made a copule of modifications to the original code.
     /// </summary>
     public class FailoverAppender : AppenderSkeleton
     {
         private AppenderSkeleton _primaryAppender;
         private AppenderSkeleton _failOverAppender;
-        
+
         /// <summary>
         /// Primary appender to push logs
         /// </summary>
