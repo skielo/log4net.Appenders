@@ -206,7 +206,7 @@ in case something goes wrong.
 
 ## Run Tests
 
-For now to run the Unit Test you must have installed and running the **Azure Storage Emulator** (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator)
+For now to run the Unit Test you must have installed and running the latest version of **Azure Storage Emulator** (https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator)
 
 ## Author
 

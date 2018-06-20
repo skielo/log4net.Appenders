@@ -13,13 +13,15 @@
     <releaseNotes>
       * Group into batches by partition key. Improve comments on summary.
       * Logging to azure tables in the background and making sure that messages would be logged after a given time had elapsed even if there weren't enough messages to fill the buffer.
+	  * Improve the way we send request to API logger.
+	  * Update WindowsAzure.Storage version.
     </releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>log4net azure Microsoft API REST Failover appenders ServiceBus asynchronous async</tags>
     <dependencies>
       <dependency id="log4net" version="2.0.8" />
       <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="3.2.3" />
-      <dependency id="WindowsAzure.Storage" version="9.1.0" />
+      <dependency id="WindowsAzure.Storage" version="9.2.0" />
       <dependency id="Newtonsoft.Json" version="11.0.1" /> 
     </dependencies>
   </metadata>
