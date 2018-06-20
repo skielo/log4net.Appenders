@@ -16,7 +16,7 @@ namespace log4net.Appender.API
     {
         private AppenderSkeleton _primaryAppender;
         private AppenderSkeleton _failOverAppender;
-        
+
         /// <summary>
         /// Primary appender to push logs
         /// </summary>

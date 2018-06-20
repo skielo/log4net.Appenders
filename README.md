@@ -143,6 +143,29 @@ Every log Entry is pushed to an endpoint API.
   User to include the basic authentincation header
 * <b>BasicPass:</b>  
   Pass to include the basic authentincation header
+* <b>SingleProcess:</b>  
+  Determines wether the the appender sends a list of events to the API or item by item.
+
+##APILoggingEventEntity
+
+The Appender sends to the configured API and instance (or a list) of APILoggingEventEntity
+
+Properties:
+	string UserName
+	DateTime EventTimeStamp
+	string ThreadName
+	string Message
+	string Properties
+	string Level
+	string Identity
+	string Domain
+	string Location
+	string Exception
+	string ClassName
+	string FileName
+	string LineNumber
+	string MethodName
+	StackFrameItem[] StackFrames
 
 ### FailoverAppender
 This appender has configured two appenders, the primary where is going to push the logs and a failover appender
